@@ -1,9 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import AppBar from '../components/Appbar';
 
-const services = [
+interface Service {
+    id: string;
+    clientName: string;
+    serviceType: string;
+    date: string;
+    location: string;
+}
+
+const servicos = [
     {
         id: '1',
         clientName: 'Ana Beatriz',
@@ -29,35 +38,30 @@ const services = [
 
 export default function DashboardScreen() {
     const navigation = useNavigation();
-    const renderServiceItem = ({ item }) => (
+
+    const renderServiceItem = ({ item }: { item: Service }) => (
         <View style={styles.card}>
             <Text style={styles.clientName}>{item.clientName}</Text>
             <Text style={styles.serviceType}>{item.serviceType}</Text>
             <Text style={styles.date}>{item.date}</Text>
             <Text style={styles.location}>{item.location}</Text>
-            <TouchableOpacity
+            <Button
+                mode="contained"
+                onPress={() => navigation.navigate('Agendamento' as never, { serviceId: item.id } as never)}
                 style={styles.acceptButton}
-                onPress={() => navigation.navigate('Agendamento', { serviceId: item.id })}
             >
-                <Text style={styles.acceptButtonText}>ACEITAR SERVIÇO</Text>
-            </TouchableOpacity>
+                <Text>ACEITAR SERVIÇO</Text>
+            </Button>
         </View>
     );
 
     return (
         <View style={styles.container}>
-            {/* Cabeçalho */}
-            <View style={styles.header}>
-                <MaterialIcons name="home" size={28} color="black" />
-                <Text style={styles.greeting}>Olá Douglas</Text>
-                <MaterialIcons name="search" size={28} color="black" />
-            </View>
-
+            <AppBar title="Fiara" subtitle="Olá Ana Beatriz" />
             <Text style={styles.title}>Solicitações</Text>
 
-            {/* Lista de serviços */}
             <FlatList
-                data={services}
+                data={servicos}
                 renderItem={renderServiceItem}
                 keyExtractor={(item) => item.id}
                 contentContainerStyle={styles.list}
@@ -70,24 +74,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#f5f5f5',
-        paddingHorizontal: 16,
-        paddingTop: 24,
-    },
-    header: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 16,
-    },
-    greeting: {
-        fontSize: 18,
-        fontWeight: 'bold',
     },
     title: {
         fontSize: 24,
         fontWeight: 'bold',
         textAlign: 'center',
-        marginBottom: 16,
+        marginVertical: 16,
     },
     list: {
         paddingBottom: 16,
@@ -112,25 +104,21 @@ const styles = StyleSheet.create({
         color: '#333',
         marginBottom: 8,
     },
+    acceptButton: {
+        marginTop: 8,
+        backgroundColor: '#6C63FF',
+    },
     date: {
         fontSize: 14,
-        color: '#666',
+        color: '#888',
+        fontStyle: 'italic',
         marginBottom: 4,
     },
     location: {
         fontSize: 14,
-        color: '#666',
+        color: '#888',
         marginBottom: 12,
-    },
-    acceptButton: {
-        backgroundColor: '#6C63FF',
-        borderRadius: 8,
-        paddingVertical: 10,
-        alignItems: 'center',
-    },
-    acceptButtonText: {
-        color: 'white',
-        fontWeight: 'bold',
-        fontSize: 14,
+        paddingLeft: 4,
+        lineHeight: 18,
     },
 });

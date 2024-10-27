@@ -27,7 +27,7 @@ export default function LoginScreen() {
     const handleLogin = () => {
         //navegaçao temporaria sem fazer login 
         navigation.navigate('Dashboard');
-        //let valid = true;
+        let valid = true;
 
         // Validação do email
         if (!validateEmail(email)) {

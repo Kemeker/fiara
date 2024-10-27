@@ -1,34 +1,42 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Calendar } from 'react-native-calendars'; // Biblioteca para o calendário
-import DateTimePicker from '@react-native-community/datetimepicker'; // Biblioteca para o horário
-import { useRoute } from '@react-navigation/native';
+import { Calendar } from 'react-native-calendars';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { RouteProp, useRoute } from '@react-navigation/native';
+import AppBar from '../components/Appbar';
+
+type RootStackParamList = {
+    Agendamento: { serviceId: string };
+};
+
+type AgendamentoRouteProp = RouteProp<RootStackParamList, 'Agendamento'>;
+
+
 
 
 export default function AgendamentoScreen() {
+
+
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedService, setSelectedService] = useState('');
     const [selectedDate, setSelectedDate] = useState('');
     const [showTimePicker, setShowTimePicker] = useState(false);
-    const [time, setTime] = useState('12:45'); // Horário inicial
+    const [time, setTime] = useState(new Date()); // Define `time` como um objeto `Date`
 
-    const route = useRoute();
+    const route = useRoute<AgendamentoRouteProp>();
     const { serviceId } = route.params;
 
-    // Lida com a seleção de horário
-    const handleTimeChange = (event, selectedTime) => {
-        const currentTime = selectedTime || time;
+    const handleSelecionarHorario = (event: any, selectedTime?: Date) => {
+        const currentTime = selectedTime || new Date();
         setShowTimePicker(false);
-        setTime(currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+        setTime(currentTime);
     };
 
-    // Lida com a seleção de data no calendário
-    const handleDateSelect = (day) => {
+    const handleDateSelect = (day: { dateString: string }) => {
         setSelectedDate(day.dateString);
-    };
+    }
 
-    // Mostra o modal de confirmação
     const handleConfirmar = () => {
         Alert.alert(
             'Confirmação',
@@ -43,11 +51,11 @@ export default function AgendamentoScreen() {
     return (
         <View style={styles.container}>
             {/* Cabeçalho */}
-            <View style={styles.header}>
-                <MaterialIcons name="home" size={28} color="black" />
-                <Text style={styles.greeting}>Olá Douglas</Text>
-                <MaterialIcons name="search" size={28} color="black" />
-            </View>
+
+            <AppBar title="Fiara" subtitle="Olá Ana Beatriz" />
+
+
+
 
             <Text style={styles.title}>Agendamento</Text>
 
@@ -78,15 +86,17 @@ export default function AgendamentoScreen() {
 
             {/* Seleção de horário */}
             <TouchableOpacity onPress={() => setShowTimePicker(true)} style={styles.timeInput}>
-                <Text style={styles.timeText}>{time}</Text>
+                <Text style={styles.timeText}>
+                    {time.getHours().toString().padStart(2, '0')}:{time.getMinutes().toString().padStart(2, '0')}
+                </Text>
             </TouchableOpacity>
             {showTimePicker && (
                 <DateTimePicker
-                    value={new Date()}
+                    value={time} // Define o valor inicial como o horário selecionado
                     mode="time"
                     is24Hour={true}
-                    display="default"
-                    onChange={handleTimeChange}
+                    display="spinner"
+                    onChange={handleSelecionarHorario}
                 />
             )}
 
