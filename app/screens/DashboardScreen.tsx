@@ -19,6 +19,7 @@ const servicos = [
         serviceType: 'Sobrancelhas',
         date: '11:00 - 12/07/2024',
         location: 'Rua Sete de Setembro - Centro, Chapecó - SC, 89802-112 Sala 205',
+        valor: '180 R$',
     },
     {
         id: '2',
@@ -26,6 +27,7 @@ const servicos = [
         serviceType: 'Massagem',
         date: '14:00 - 13/07/2024',
         location: 'Av. Getulio Vargas - Centro, Chapecó - SC, 89802-112 Sala 205',
+        valor: '150 R$',
     },
     {
         id: '3',
@@ -33,6 +35,7 @@ const servicos = [
         serviceType: 'Manicure',
         date: '11:30 - 12/07/2024',
         location: 'Av. Fernando Machado - Centro, Chapecó - SC, 89802-112 Sala 205',
+        valor: '100 R$',
     },
 ];
 
@@ -45,6 +48,7 @@ export default function DashboardScreen() {
             <Text style={styles.serviceType}>{item.serviceType}</Text>
             <Text style={styles.date}>{item.date}</Text>
             <Text style={styles.location}>{item.location}</Text>
+            <Text style={styles.valor}>{item.valor} </Text>
             <Button
                 mode="contained"
                 onPress={() => navigation.navigate('Agendamento' as never, { serviceId: item.id } as never)}
@@ -106,7 +110,7 @@ const styles = StyleSheet.create({
     },
     acceptButton: {
         marginTop: 8,
-        backgroundColor: '#6C63FF',
+        backgroundColor: '#9b8bf7',
     },
     date: {
         fontSize: 14,
@@ -121,4 +125,7 @@ const styles = StyleSheet.create({
         paddingLeft: 4,
         lineHeight: 18,
     },
+    valor: {
+        fontSize: 16,
+    }
 });

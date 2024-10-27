@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Appbar, Menu, Divider, Avatar } from 'react-native-paper';
 import { StyleSheet, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 interface AppBarProps {
     title: string;
@@ -12,6 +13,8 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
 
     const openMenu = () => setMenuVisible(true);
     const closeMenu = () => setMenuVisible(false);
+
+    const navigation = useNavigation();
 
     return (
         <Appbar.Header style={styles.header}>
@@ -31,8 +34,10 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
                 onDismiss={closeMenu}
                 anchor={<Appbar.Action icon="menu" color="white" onPress={openMenu} />}
             >
-                <Menu.Item onPress={() => console.log('Perfil')} title="Perfil" />
+
+                <Menu.Item onPress={() => navigation.navigate('MeusAtendimentos')} title="Meus Atendimentos" />
                 <Divider />
+                <Menu.Item onPress={() => console.log('Perfil')} title="perfil" />
                 <Menu.Item onPress={() => console.log('Configurações')} title="Configurações" />
                 <Menu.Item onPress={() => console.log('Logout')} title="Logout" />
             </Menu>
@@ -42,7 +47,7 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
 
 const styles = StyleSheet.create({
     header: {
-        backgroundColor: '#6C63FF',
+        backgroundColor: '#3c2d91',
         borderRadius: 8,
     },
     avatar: {

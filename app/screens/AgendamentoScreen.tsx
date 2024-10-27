@@ -5,6 +5,7 @@ import { Calendar } from 'react-native-calendars';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import AppBar from '../components/Appbar';
+import { useNavigation } from '@react-navigation/native';
 
 type RootStackParamList = {
     Agendamento: { serviceId: string };
@@ -17,6 +18,8 @@ type AgendamentoRouteProp = RouteProp<RootStackParamList, 'Agendamento'>;
 
 export default function AgendamentoScreen() {
 
+
+    const navigation = useNavigation();
 
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedService, setSelectedService] = useState('');
@@ -43,7 +46,7 @@ export default function AgendamentoScreen() {
             'Realmente deseja fazer essa solicitação?',
             [
                 { text: 'Cancelar', style: 'cancel' },
-                { text: 'Confirmar', onPress: () => console.log('Solicitação Confirmada') },
+                { text: 'Confirmar', onPress: () => navigation.navigate('ConfirmarLocalizacao') },
             ]
         );
     };
@@ -52,12 +55,11 @@ export default function AgendamentoScreen() {
         <View style={styles.container}>
             {/* Cabeçalho */}
 
-            <AppBar title="Fiara" subtitle="Olá Ana Beatriz" />
+            <AppBar title='Agendamento' subtitle="Olá Ana Beatriz" />
 
 
 
 
-            <Text style={styles.title}>Agendamento</Text>
 
             {/* Seleção de categoria */}
             <TouchableOpacity style={styles.selectBox}>
@@ -67,7 +69,7 @@ export default function AgendamentoScreen() {
 
             {/* Seleção de serviço */}
             <TouchableOpacity style={styles.selectBox}>
-                <Text style={styles.selectText}>Selecione o Serviço</Text>
+                <Text style={styles.selectText}>Selecione o serviço</Text>
                 <MaterialIcons name="arrow-drop-down" size={24} color="black" />
             </TouchableOpacity>
 
@@ -138,11 +140,13 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ddd',
         borderRadius: 8,
-        padding: 12,
+        padding: 10,
         marginBottom: 12,
         backgroundColor: 'white',
+        marginTop: 10,
     },
     selectText: {
+        margin: 10,
         fontSize: 16,
         color: '#333',
     },
@@ -161,7 +165,7 @@ const styles = StyleSheet.create({
         color: '#333',
     },
     confirmButton: {
-        backgroundColor: '#6C63FF',
+        backgroundColor: '#3c2d91',
         borderRadius: 8,
         paddingVertical: 14,
         alignItems: 'center',

@@ -54,7 +54,7 @@ export default function LoginScreen() {
     };
 
     return (
-        <LinearGradient colors={['#4e54c8', '#8f94fb']} style={styles.container}>
+        <LinearGradient colors={['#3c2d91', '#8f94fb']} style={styles.container}>
             <View style={styles.logoContainer}>
                 <Image source={f} style={styles.logo} />
                 <Text style={styles.title}>Fiara</Text>
