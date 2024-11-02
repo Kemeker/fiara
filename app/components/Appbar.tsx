@@ -18,7 +18,7 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
 
     return (
         <Appbar.Header style={styles.header}>
-            <Avatar.Image size={50} source={require('../assets/images/f.png')} style={styles.avatar} />
+            <Avatar.Image size={50} source={require('../assets/images/F.png')} style={styles.avatar} />
 
             <Appbar.Content
                 title={title}

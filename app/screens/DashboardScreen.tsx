@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { Button } from 'react-native-paper';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import AppBar from '../components/Appbar';
 
 interface Service {
@@ -41,6 +41,7 @@ const servicos = [
 
 export default function DashboardScreen() {
     const navigation = useNavigation();
+    const route = useRoute()
 
     const renderServiceItem = ({ item }: { item: Service }) => (
         <View style={styles.card}>
@@ -61,8 +62,8 @@ export default function DashboardScreen() {
 
     return (
         <View style={styles.container}>
-            <AppBar title="Fiara" subtitle="Olá Ana Beatriz" />
-            <Text style={styles.title}>Solicitações</Text>
+            <AppBar title={route.name} subtitle="Olá Ana Beatriz" />
+
 
             <FlatList
                 data={servicos}

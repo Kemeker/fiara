@@ -17,7 +17,7 @@ export default function Router() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="Dashboard" component={DashboardScreen} />
+        <Stack.Screen name="Serviços" component={DashboardScreen} />
         <Stack.Screen name="Agendamento" component={AgendamentoScreen} />
         <Stack.Screen name="MeusAtendimentos" component={MeusAtendimentosScreen} />
         <Stack.Screen name="ConfirmarLocalizacao" component={ConfirmarLocalizacaoScreen} />

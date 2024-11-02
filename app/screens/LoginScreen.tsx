@@ -3,7 +3,7 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity, Alert } fro
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import f from '../assets/images/f.png'
+import f from '../assets/images/fiara.png'
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -26,7 +26,7 @@ export default function LoginScreen() {
 
     const handleLogin = () => {
         //navegaçao temporaria sem fazer login 
-        navigation.navigate('Dashboard');
+        navigation.navigate('Serviços');
         let valid = true;
 
         // Validação do email
@@ -57,7 +57,7 @@ export default function LoginScreen() {
         <LinearGradient colors={['#3c2d91', '#8f94fb']} style={styles.container}>
             <View style={styles.logoContainer}>
                 <Image source={f} style={styles.logo} />
-                <Text style={styles.title}>Fiara</Text>
+
             </View>
 
             <View style={styles.inputContainer}>
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
         marginBottom: 32,
     },
     logo: {
-        width: 80,
-        height: 80,
+        width: 275,
+        height: 140,
         marginBottom: 8,
     },
     title: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         marginRight: 4,
     },
     loginButton: {
-        backgroundColor: '#6C63FF',
+        backgroundColor: '#5810e8',
         borderRadius: 10,
         paddingVertical: 14,
         alignItems: 'center',

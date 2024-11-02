@@ -21,6 +21,7 @@ export default function AgendamentoScreen() {
 
     const navigation = useNavigation();
 
+
     const [selectedCategory, setSelectedCategory] = useState('');
     const [selectedService, setSelectedService] = useState('');
     const [selectedDate, setSelectedDate] = useState('');
