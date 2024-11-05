@@ -34,4 +34,4 @@ export const DataHoraStyles = StyleSheet.create({
         fontSize: 16,
         color: '#333',
     },
-});
+}); 

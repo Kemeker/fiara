@@ -290,3 +290,197 @@ export const dashboardStyles = StyleSheet.create({
         fontSize: 16,
     }
 });
+
+// styles da tela de cadastro
+export const CadastroStyles = StyleSheet.create({
+
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        paddingHorizontal: 32,
+    },
+    logoContainer: {
+        alignItems: 'center',
+        marginBottom: 32,
+    },
+    logo: {
+        width: 275,
+        height: 140,
+        marginBottom: 8,
+    },
+    title: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        color: 'white',
+    },
+    inputContainer: {
+        width: '100%',
+        marginBottom: 16,
+    },
+    input: {
+        backgroundColor: '#f0f0f0',
+        borderRadius: 10,
+        padding: 12,
+        paddingLeft: 16,
+        fontSize: 16,
+        color: '#333',
+        marginBottom: 8,
+    },
+    passwordContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        borderRadius: 10,
+    },
+    eyeIcon: {
+        padding: 10,
+        marginRight: 4,
+    },
+    loginButton: {
+        backgroundColor: '#5810e8',
+        borderRadius: 10,
+        paddingVertical: 14,
+        alignItems: 'center',
+        marginBottom: 16,
+    },
+    loginButtonText: {
+        color: 'white',
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    forgotPasswordText: {
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
+        marginBottom: 24,
+    },
+    registerText: {
+        color: 'white',
+        fontSize: 14,
+        textAlign: 'center',
+    },
+    registerLink: {
+        color: '#FFD700',
+        fontWeight: 'bold',
+    },
+    termsContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 24,
+    },
+    termsText: {
+        color: 'white',
+        fontSize: 14,
+        marginRight: 8,
+    },
+});
+
+// style da tela de aguardando pagamento
+export const aguardandoPagamentoStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingHorizontal: 16,
+        paddingTop: 24,
+    },
+    scrollContent: {
+        paddingBottom: 20,
+    },
+    card: {
+        backgroundColor: 'white',
+        borderRadius: 8,
+        padding: 16,
+        marginBottom: 16,
+        borderWidth: 1,
+        borderColor: '#ddd',
+    },
+    profileContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    profileImage: {
+        width: 60,
+        height: 60,
+        borderRadius: 30,
+        marginRight: 16,
+    },
+    profileDetails: {
+        flex: 1,
+    },
+    serviceType: {
+        fontSize: 14,
+        color: '#888',
+        marginBottom: 4,
+    },
+    professionalName: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    professionalDescription: {
+        fontSize: 14,
+        color: '#666',
+        marginTop: 4,
+    },
+    mapImage: {
+        width: '100%',
+        height: 150,
+        borderRadius: 8,
+        marginBottom: 16,
+    },
+    addressContainer: {
+        marginTop: 10,
+    },
+    dateLabel: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#333',
+        marginBottom: 4,
+    },
+    dateValue: {
+        fontSize: 16,
+        color: '#333',
+        marginBottom: 8,
+    },
+    addressLabel: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    addressValue: {
+        fontSize: 16,
+        color: '#666',
+        marginTop: 4,
+    },
+    priceContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
+        borderWidth: 1,
+        borderColor: '#ddd',
+        borderRadius: 8,
+        marginBottom: 20,
+    },
+    priceLabel: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    priceValue: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#333',
+    },
+    paymentButton: {
+        backgroundColor: '#3c2d91',
+        borderRadius: 8,
+        paddingVertical: 14,
+        alignItems: 'center',
+    },
+    paymentButtonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+});

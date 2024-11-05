@@ -20,7 +20,7 @@ export default function ConfirmarLocalizacaoScreen() {
 
     return (
         <View style={styles.container}>
-            <AppBar title="Confirmar localização" subtitle="Olá Ana Beatriz" />
+            <AppBar title="Confirmar Localização" subtitle="Olá Ana Beatriz" />
 
             <View style={styles.mapContainer}>
                 <Image

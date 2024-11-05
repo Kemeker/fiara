@@ -54,6 +54,11 @@ export default function LoginScreen() {
         }
     };
 
+    // funçao para ir a tela de cadastro
+    const handleCadastro = () => {
+        navigation.navigate('Cadastro')
+    }
+
     return (
         <LinearGradient colors={['#3c2d91', '#8f94fb']} style={styles.container}>
             <View style={styles.logoContainer}>
@@ -99,7 +104,7 @@ export default function LoginScreen() {
             </TouchableOpacity>
 
             <TouchableOpacity>
-                <Text style={styles.registerText}>Não tem uma conta? <Text style={styles.registerLink}>Cadastre-se</Text></Text>
+                <Text style={styles.registerText}>Não tem uma conta? <Text style={styles.registerLink} onPress={handleCadastro}>Cadastre-se</Text></Text>
             </TouchableOpacity>
         </LinearGradient>
     );
