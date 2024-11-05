@@ -39,7 +39,8 @@ const DropDown: React.FC<DropDownProps> = ({
             <Modal
                 visible={isCategoryPickerVisible}
                 transparent={false}
-                animationType="slide">
+                animationType="none"
+            >
                 <View style={styles.pickerModal}>
                     <Picker
                         selectedValue={selectedCategory}

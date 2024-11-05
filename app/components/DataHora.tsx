@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
+import { DataHoraStyles as styles } from '../style/components';
 
 interface DataHoraProps {
     time: Date;
@@ -40,21 +41,6 @@ const DataHora: React.FC<DataHoraProps> = ({ time, onTimeChange }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    timeInput: {
-        borderWidth: 1,
-        borderColor: '#ddd',
-        borderRadius: 8,
-        padding: 14,
-        marginTop: 12,
-        marginBottom: 24,
-        backgroundColor: 'white',
-        alignItems: 'center',
-    },
-    timeText: {
-        fontSize: 16,
-        color: '#333',
-    },
-});
+
 
 export default DataHora;

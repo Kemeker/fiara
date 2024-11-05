@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import f from '../assets/images/fiara.png'
+import { loginStyles as styles } from '../style/screens'
 
 export default function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -104,74 +105,3 @@ export default function LoginScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        paddingHorizontal: 32,
-    },
-    logoContainer: {
-        alignItems: 'center',
-        marginBottom: 32,
-    },
-    logo: {
-        width: 275,
-        height: 140,
-        marginBottom: 8,
-    },
-    title: {
-        fontSize: 28,
-        fontWeight: 'bold',
-        color: 'white',
-    },
-    inputContainer: {
-        width: '100%',
-        marginBottom: 16,
-    },
-    input: {
-        backgroundColor: '#f0f0f0',
-        borderRadius: 10,
-        padding: 12,
-        paddingLeft: 16,
-        fontSize: 16,
-        color: '#333',
-        marginBottom: 8,
-    },
-    passwordContainer: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: '#f0f0f0',
-        borderRadius: 10,
-    },
-    eyeIcon: {
-        padding: 10,
-        marginRight: 4,
-    },
-    loginButton: {
-        backgroundColor: '#5810e8',
-        borderRadius: 10,
-        paddingVertical: 14,
-        alignItems: 'center',
-        marginBottom: 16,
-    },
-    loginButtonText: {
-        color: 'white',
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-    forgotPasswordText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
-        marginBottom: 24,
-    },
-    registerText: {
-        color: 'white',
-        fontSize: 14,
-        textAlign: 'center',
-    },
-    registerLink: {
-        color: '#FFD700',
-        fontWeight: 'bold',
-    },
-});

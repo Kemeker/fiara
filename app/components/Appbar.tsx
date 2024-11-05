@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Appbar, Menu, Divider, Avatar } from 'react-native-paper';
-import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { AppBarStyles as styles } from '../style/components';
 
 interface AppBarProps {
     title: string;
@@ -35,7 +35,7 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
                 anchor={<Appbar.Action icon="menu" color="white" onPress={openMenu} />}
             >
 
-                <Menu.Item onPress={() => navigation.navigate('MeusAtendimentos')} title="Meus Atendimentos" />
+                <Menu.Item onPress={() => navigation.navigate('MeusAtendimentos')} title="Atendimentos" />
                 <Divider />
                 <Menu.Item onPress={() => console.log('Perfil')} title="perfil" />
                 <Menu.Item onPress={() => console.log('Configurações')} title="Configurações" />
@@ -45,21 +45,6 @@ const AppBar: React.FC<AppBarProps> = ({ title, subtitle }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    header: {
-        backgroundColor: '#3c2d91',
-        borderRadius: 8,
-    },
-    avatar: {
-        marginRight: 10,
-    },
-    title: {
-        color: 'white',
-        fontWeight: 'bold',
-    },
-    subtitle: {
-        color: '#FFD700',
-    },
-});
+
 
 export default AppBar;

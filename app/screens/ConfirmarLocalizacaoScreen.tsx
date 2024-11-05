@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Alert, Image } from 'react-native';
 import AppBar from '../components/Appbar';
 import { useNavigation } from '@react-navigation/native';
+import { localizacaoStyles as styles } from '../style/screens'
 
 export default function ConfirmarLocalizacaoScreen() {
     const navigation = useNavigation();
@@ -36,34 +37,3 @@ export default function ConfirmarLocalizacaoScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#f5f5f5',
-        paddingHorizontal: 16,
-        paddingTop: 24,
-    },
-    mapContainer: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        marginVertical: 20,
-    },
-    map: {
-        width: '100%',
-        height: 400,
-        borderRadius: 8,
-    },
-    confirmButton: {
-        backgroundColor: '#6C63FF',
-        borderRadius: 8,
-        paddingVertical: 14,
-        alignItems: 'center',
-        marginBottom: 20,
-    },
-    confirmButtonText: {
-        color: 'white',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-});

@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, FlatList } from 'react-native';
 import { Button } from 'react-native-paper';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AppBar from '../components/Appbar';
+import { dashboardStyles as styles } from '../style/screens';
 
 interface Service {
     id: string;
@@ -75,58 +76,3 @@ export default function DashboardScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#f5f5f5',
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginVertical: 16,
-    },
-    list: {
-        paddingBottom: 16,
-    },
-    card: {
-        backgroundColor: 'white',
-        borderRadius: 8,
-        padding: 16,
-        marginBottom: 16,
-        borderWidth: 1,
-        borderColor: '#ddd',
-    },
-    clientName: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: '#666',
-        marginBottom: 4,
-    },
-    serviceType: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: '#333',
-        marginBottom: 8,
-    },
-    acceptButton: {
-        marginTop: 8,
-        backgroundColor: '#9b8bf7',
-    },
-    date: {
-        fontSize: 14,
-        color: '#888',
-        fontStyle: 'italic',
-        marginBottom: 4,
-    },
-    location: {
-        fontSize: 14,
-        color: '#888',
-        marginBottom: 12,
-        paddingLeft: 4,
-        lineHeight: 18,
-    },
-    valor: {
-        fontSize: 16,
-    }
-});

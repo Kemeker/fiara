@@ -1,7 +1,9 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { Button, Card } from 'react-native-paper';
+import { View, Text, FlatList } from 'react-native';
+import { Card } from 'react-native-paper';
 import AppBar from '../components/Appbar';
+import { atendimentoStyles as styles } from '../style/screens';
+
 
 
 interface Atendimento {
@@ -57,7 +59,7 @@ export default function MeusAtendimentosScreen() {
 
     return (
         <View style={styles.container}>
-            <AppBar title="Meus Atendimentos" subtitle="Olá Ana Beatriz" />
+            <AppBar title="Atendimentos" subtitle="Olá Ana Beatriz" />
 
 
             <FlatList
@@ -70,62 +72,3 @@ export default function MeusAtendimentosScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#9b93c9',
-        paddingHorizontal: 16,
-        paddingTop: 24,
-
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        textAlign: 'center',
-        marginBottom: 16,
-        color: '#333',
-    },
-    list: {
-        paddingBottom: 16,
-    },
-    card: {
-        marginBottom: 16,
-        borderColor: '#ddd',
-        borderWidth: 1,
-        borderRadius: 8,
-        marginTop: 10,
-    },
-    clientName: {
-        fontSize: 14,
-        fontWeight: 'bold',
-        color: 'white',
-        marginBottom: 4,
-    },
-    serviceType: {
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: 'white',
-        marginBottom: 8,
-    },
-    date: {
-        fontSize: 14,
-        color: 'red',
-        fontStyle: 'italic',
-        marginBottom: 4,
-    },
-    location: {
-        fontSize: 14,
-        color: 'white',
-        marginBottom: 12,
-    },
-    statusAceito: {
-        color: 'green',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-    statusConcluido: {
-        color: '#9b8bf7',
-        fontWeight: 'bold',
-        textAlign: 'center',
-    },
-});

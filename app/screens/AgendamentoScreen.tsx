@@ -7,6 +7,7 @@ import {
     Alert,
     ScrollView
 } from 'react-native';
+import { agendamentoStyles as styles } from '../style/screens'
 import { RouteProp, useRoute, useNavigation } from '@react-navigation/native';
 
 // componentes
@@ -91,24 +92,3 @@ export default function AgendamentoScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#f5f5f5',
-    },
-    scrollContent: {
-        paddingHorizontal: 16,
-        paddingTop: 24,
-    },
-    confirmButton: {
-        backgroundColor: '#3c2d91',
-        borderRadius: 8,
-        paddingVertical: 14,
-        alignItems: 'center',
-    },
-    confirmButtonText: {
-        color: 'white',
-        fontSize: 16,
-        fontWeight: 'bold',
-    },
-});
