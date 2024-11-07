@@ -11,6 +11,7 @@ import ConfirmarLocalizacaoScreen from '../screens/ConfirmarLocalizacaoScreen';
 import BuscaServicosScreen from '../screens/BuscaServicosScreen';
 import CadastroScreen from '../screens/CadastroScreen';
 import AguardandoPagamentoScreen from '../screens/AguardandoPagamentoScreen';
+import Pagamento from '../screens/PagamentoScreen';
 
 
 const Stack = createStackNavigator();
@@ -27,6 +28,7 @@ export default function Router() {
         <Stack.Screen name="BuscaServicos" component={BuscaServicosScreen} />
         <Stack.Screen name="Cadastro" component={CadastroScreen} />
         <Stack.Screen name="Pagamento" component={AguardandoPagamentoScreen} />
+        <Stack.Screen name="QRCode" component={Pagamento} />
 
 
       </Stack.Navigator>

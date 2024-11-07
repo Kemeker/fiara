@@ -15,6 +15,7 @@ export default function AguardandoPagamentoScreen() {
     const handlePayment = () => {
         // Função para processar o pagamento
         alert("Processando pagamento...");
+        navigation.navigate('QRCode');
     };
 
     return (

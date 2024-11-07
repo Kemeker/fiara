@@ -118,7 +118,7 @@ export const localizacaoStyles = StyleSheet.create({
         borderRadius: 8,
     },
     confirmButton: {
-        backgroundColor: '#6C63FF',
+        backgroundColor: '#3c2d91',
         borderRadius: 8,
         paddingVertical: 14,
         alignItems: 'center',
@@ -479,6 +479,79 @@ export const aguardandoPagamentoStyles = StyleSheet.create({
         alignItems: 'center',
     },
     paymentButtonText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+});
+
+// style da tela de pagamento
+export const pagamentoStyles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#f5f5f5',
+        paddingHorizontal: 16,
+        paddingTop: 24,
+    },
+    title: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        marginBottom: 16,
+        color: '#333',
+    },
+    qrCodeContainer: {
+        alignItems: 'center',
+        marginBottom: 16,
+        padding: 20,
+        backgroundColor: '#ddd',
+        borderRadius: 8,
+    },
+    qrCodeImage: {
+        width: 200,
+        height: 200,
+    },
+    codeContainer: {
+        alignItems: 'center',
+        marginBottom: 24,
+    },
+    codeLabel: {
+        fontSize: 16,
+        color: '#333',
+        marginBottom: 8,
+    },
+    codeValue: {
+        fontSize: 14,
+        color: '#555',
+        textAlign: 'center',
+    },
+    paymentInfoContainer: {
+        borderWidth: 1,
+        borderColor: '#333',
+        padding: 12,
+        borderRadius: 8,
+        marginBottom: 16,
+    },
+    paymentLabel: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#333',
+        marginBottom: 4,
+    },
+    paymentValue: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#333',
+        textAlign: 'center',
+    },
+    confirmButton: {
+        backgroundColor: '#3c2d91',
+        borderRadius: 8,
+        paddingVertical: 14,
+        alignItems: 'center',
+        marginTop: 20,
+    },
+    confirmButtonText: {
         color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
