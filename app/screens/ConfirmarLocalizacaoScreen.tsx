@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Alert, Image } from 'react-native';
+
 import AppBar from '../components/Appbar';
 import { useNavigation } from '@react-navigation/native';
 import { localizacaoStyles as styles } from '../style/screens'
+
+
+
 
 export default function ConfirmarLocalizacaoScreen() {
     const navigation = useNavigation();

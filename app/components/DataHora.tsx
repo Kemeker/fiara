@@ -1,7 +1,7 @@
 // components/DataHora.tsx
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import { DataHoraStyles as styles } from '../style/components';
 
 interface DataHoraProps {
@@ -12,7 +12,8 @@ interface DataHoraProps {
 const DataHora: React.FC<DataHoraProps> = ({ time, onTimeChange }) => {
     const [showTimePicker, setShowTimePicker] = useState(false);
 
-    const handleSelecionarHorario = (event: any, selectedTime?: Date) => {
+    // Função para lidar com a seleção de horário
+    const handleSelecionarHorario = (selectedTime?: Date) => {
         const currentTime = selectedTime || time;
         setShowTimePicker(false);
         onTimeChange(currentTime);
@@ -28,19 +29,16 @@ const DataHora: React.FC<DataHoraProps> = ({ time, onTimeChange }) => {
             </TouchableOpacity>
 
             {/* Modal do DateTimePicker */}
-            {showTimePicker && (
-                <DateTimePicker
-                    value={time}
-                    mode="time"
-                    is24Hour={true}
-                    display="spinner"
-                    onChange={handleSelecionarHorario}
-                />
-            )}
+            <DateTimePickerModal
+                isVisible={showTimePicker}
+                mode="time"
+                date={time}
+                is24Hour={true}
+                onConfirm={handleSelecionarHorario}
+                onCancel={() => setShowTimePicker(false)}
+            />
         </View>
     );
 };
 
-
-
-export default DataHora;
+export default DataHora;;

@@ -114,8 +114,11 @@ export const localizacaoStyles = StyleSheet.create({
     },
     map: {
         width: '100%',
-        height: 400,
+        height: '70%',  // Ajusta a altura do mapa 
         borderRadius: 8,
+        overflow: 'hidden',
+        borderColor: '#ddd',
+        borderWidth: 1,
     },
     confirmButton: {
         backgroundColor: '#3c2d91',
